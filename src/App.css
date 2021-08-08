@@ -1,0 +1,21 @@
+.head{
+  font-size: 30px;
+  
+  text-transform: uppercase;
+  
+  height: 60px;
+}
+.cyan-color{
+  background-color: aqua;
+}
+
+.no-user{
+  text-align: center;
+  margin-top: 20%;
+  font-size: 30px;
+}
+@media screen and (min-width: 500px) {
+  .form {
+   width:400px !important
+  }
+}
