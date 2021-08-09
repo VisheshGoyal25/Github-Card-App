@@ -6,9 +6,11 @@
   height: 60px;
 }
 .cyan-color{
-  background-color: aqua;
+  background-color: rgba(34, 192, 192, 0.87);
 }
-
+.btn-color{
+  background-color: white
+}
 .no-user{
   text-align: center;
   margin-top: 20%;

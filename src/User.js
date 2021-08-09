@@ -7,7 +7,7 @@ function User({data}) {
         <div className='user'>
           
       <div className='item'>  <Profile  data={data}></Profile></div>
-      <div className='item'>  <Projects  data={data.repos}></Projects></div>
+      <div className='item scroll'>  <Projects  data={data.repos}></Projects></div>
       
         </div>
     )

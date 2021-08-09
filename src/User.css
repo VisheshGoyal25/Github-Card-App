@@ -6,16 +6,23 @@
         border-radius: 5px;
         margin-left: 10%;
         display:flex;
+        flex-wrap: wrap;
      flex-direction: row;
      width:70%;
      justify-content: space-evenly;
      margin-top:40px;
+     max-height: 80vh;
      
+     
+    }
+    .scroll{
+        overflow-y:scroll !important;
+        max-height: 75vh !important;
+        
     }
     .item
     {
         width:400px;
-        align-self: center;
     }
   }
   @media screen and (max-width: 500px) {

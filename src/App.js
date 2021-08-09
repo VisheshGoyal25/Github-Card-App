@@ -8,18 +8,22 @@ toast.configure()
 function App() {
   const [data,setData]= useState([])
   const [count,setCount]= useState(0)
-  const [usernames,setUsers]= useState([])
+  const [usernames,setUsers]= useState([""])
+  function checkmatch(user) {
+    return user===document.getElementById("name").value;
+  }
  const fetch_data=async(e)=>{
   e.preventDefault()
   const user=document.getElementById("name").value;
-  document.getElementById("name").value=""
-    if(usernames.indexOf(user) > -1&& usernames.indexOf(user)<count)  
+ const check= usernames.findIndex(checkmatch);
+  if(check!==-1)  
   { 
+    
     toast.info('The user already exists!',{  
-      position: toast.POSITION.BOTTOM_RIGHT})  
+      position: toast.POSITION.BOTTOM_RIGHT})   
           return 
   }  
-  setUsers(user,...usernames)
+  setUsers([user,...usernames])
   try{
       const api=await axios.get(`https://api.github.com/users/${user}`)
     const d=api.data
@@ -51,7 +55,7 @@ function App() {
             <a className="navbar-brand head">Github-Card-App</a>
             <form className="d-flex " onSubmit={fetch_data} >
               <input className="form-control me-2 form"  type="text" placeholder="Search Github User" aria-label="Search" id="name" required></input>
-              <button className="btn btn-outline-success " type="Submit" onClick={fetch_data} id="type">Fetch</button>
+              <button className="btn btn-outline-success btn-color" type="Submit" onSubmit={fetch_data} id="type">Fetch</button>
             </form>
           </div>
         </nav>
